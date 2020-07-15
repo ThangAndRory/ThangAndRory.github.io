@@ -1,0 +1,365 @@
+.body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  /*   display: grid;
+  grid-template-columns: 9fr auto;
+  grid-template-areas: 'map charts'; */
+  transition: all 1s;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /*hide the overflow */
+}
+
+#map {
+  /*   grid-template-areas: map; */
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  left: 0%;
+  top: 0%;
+  overflow-y: hidden;
+}
+
+.chart-placeholder {
+  font-size: 20px;
+}
+
+.outer-charts-container {
+  justify-self: center;
+  margin: 0 auto;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  border: 1px solid black;
+  background: #bbb;
+  opacity: 0.9;
+  z-index: 5000;
+  width: 45vw;
+  height: 100vh;
+  transform: translateX(250%);
+  overflow: auto;
+  overflow-x: hidden;
+  background: rgb(248, 248, 255);
+}
+
+.outer-charts-container > span {
+  background: rgb(248, 248, 255);
+  padding: 5px;
+  width: 1.75vw;
+}
+
+.outer-charts-container > span:hover,
+.outer-charts-container > span:focus {
+  color: white;
+  background: #111;
+  cursor: pointer;
+}
+
+.slide-in {
+  transition: all 1s;
+  transform: translateX(122%);
+}
+
+.slide-out {
+  transition: all 1s;
+  transform: translateX(250%);
+}
+
+@media only screen and (max-width: 992px) {
+  .slide-in {
+    transition: all 1s;
+    transform: translateX(49.5%);
+  }
+  .outer-charts-container {
+    width: 67vw;
+  }
+  .outer-charts-container > span {
+    width: 2.6vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .slide-in {
+    transition: all 1s;
+    transform: translateX(43%);
+  }
+  .outer-charts-container {
+    width: 70vw;
+  }
+  .outer-charts-container > span {
+    width: 3.2vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slide-in {
+    transition: all 1s;
+    transform: translateX(11.5%);
+  }
+  .outer-charts-container {
+    width: 90vw;
+  }
+  .outer-charts-container > span {
+    width: 3.85vw;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .slide-in {
+    transition: all 1s;
+    transform: translateX(0%);
+  }
+  .outer-charts-container {
+    width: 100vw;
+    overflow-x: visible;
+  }
+  .outer-charts-container > span {
+    width: 5vw;
+  }
+}
+
+.tooltip-container {
+  padding: 5px 0px 0px 0px;
+  top: -36px;
+  left: -1px;
+  border: transparent;
+  border-radius: 12px;
+  display: flex;
+}
+
+.tooltip-content {
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 0 5px;
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-top: -6px;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltip-content > p {
+  margin: 0 auto;
+  padding: 0 5px 2px 5px;
+}
+
+.awesome-marker i {
+  font-size: 17px;
+}
+
+.leaflet-control-search .search-input {
+  border-color: #fff;
+  float: right;
+}
+
+.leaflet-touch .leaflet-control-geocoder-icon {
+  height: 34px;
+}
+
+.leaflet-control-geocoder-form {
+  width: 188px;
+  margin-left: 5px;
+}
+
+.leaflet-control-geocoder-form input {
+  padding-bottom: 4px;
+}
+
+.leaflet-control-geocoder-icon {
+  width: 26px;
+  height: 35px;
+  border-radius: 4px;
+  background: url('./search-icon.png') no-repeat 4px 7px #fff;
+}
+
+.fa-info-circle:hover,
+.fa-info-circle:focus {
+  font-size: 35px;
+  color: orangered;
+  border: 50% solid #fff;
+  transition-duration: 0.1s;
+  transform-origin: center;
+}
+
+.leaflet-left .leaflet-control-scale {
+  margin-left: 10px;
+}
+
+.leaflet-control-scale-line {
+  font-size: 12.5px;
+}
+
+.leaflet-control {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  transition-duration: 0.2s;
+}
+
+button.leaflet-control:hover,
+button.leaflet-control:focus {
+  background-color: orange;
+  color: #111;
+}
+
+button.leaflet-control:active {
+  background: orangered;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button-default-style {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+  border: 2px solid rgba(1, 1, 1, 0.3);
+}
+
+.cluster-label {
+  width: max-content;
+  font-size: 14px;
+  margin-left: -5px;
+  padding: 0 5px 0 5px;
+  font-weight: 600;
+  color: #111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: orange;
+  opacity: 0.7;
+  border-radius: 18%;
+  transition: 0.2s;
+  transform-origin: center;
+}
+
+.cluster-label:hover {
+  background: #ddd;
+  color: black !important;
+  font-size: 16px !important;
+  opacity: 1;
+}
+
+.West div p {
+  margin-left: -6px;
+}
+
+.West {
+  margin-top: -50px !important;
+  margin-left: -99px !important;
+}
+
+.Otago {
+  margin-top: -40px !important;
+}
+
+.Otago div p {
+  margin-left: 0px;
+}
+
+.Waikato {
+  margin-top: -10.5px !important;
+}
+
+.info-control {
+  border: none;
+  background: transparent;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 9000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #222;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #ec8805;
+  color: white;
+  text-align: center;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #ec8805;
+  color: white;
+}
+
+.w3-content > div p {
+  font-size: 14px;
+  margin: 5px 58px 0 58px;
+  padding: 0 10px;
+  background: #efe;
+  line-height: 2em;
+}
