@@ -26,7 +26,7 @@ Similar to ‘Data set Selector’ this lets users toggle between the default �
 ### Clear All Paths: 
 This button removes all active ant-path animations on the map (ant-path function covered shortly).
 
-## A Closer Look
+### A Closer Look
 There are many zoom levels avaialbe and there are variations of base zoom levels for addresses. This means that some address icon are not displayed (to avoid clutter) when others are.
 
 To unfold further addresses, users can click the tabs containing the desired address location. This will zoom users into those address clusters at the appropriate level, display the address icons at their centroid, and notify the users that a click will activate the chart feature.
@@ -50,5 +50,5 @@ Have charts for landing view regions (on hover) giving aggregate stats for the r
 
 - Do more testing and fix bugs
 
-## Sources
+### Sources
 https://docs.google.com/document/d/1mP-KDqwYHfKRFx_A8bV0oPFUz_VB_IIeqKArRgyYjNQ/edit?usp=sharing
