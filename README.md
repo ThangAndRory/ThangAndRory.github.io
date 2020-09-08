@@ -1,6 +1,7 @@
 # Stats NZ 'There and back again' Competition Entry
 
 [Link](https://thangandrory.github.io/)
+[Link to Source Code before Browserified]('https://github.com/thangpham7793/stat_nz_map_leaflet_js/tree/master/src')
 
 Welcome to the tutorial document for my entry for the StatsNZ ‘There and back again’ data visualisation competition.
 
