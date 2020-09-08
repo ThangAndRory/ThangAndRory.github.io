@@ -1,5 +1,7 @@
 # Stats NZ 'There and back again' Competition Entry
 
+[Link](https://thangandrory.github.io/)
+
 Welcome to the tutorial document for my entry for the StatsNZ ‘There and back again’ data visualisation competition.
 
 The app was built using a variety of Python and JavaScript libraries and plugins such as Leaflet, Pandas, Plotly (and more), with data from StatsNZ and OpenStreetMap. The statistical programming was done using Anaconda’s Jupyter notebooks Python environment with Pandas.
